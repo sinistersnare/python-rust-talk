@@ -1,0 +1,12 @@
+[package]
+name = "python"
+version = "0.0.1"
+authors = ["Davis Silverman <sinistersnare@gmail.com>"]
+
+[lib]
+name = "python"
+crate_type = ["dylib"]
+test = false
+
+[dependencies]
+libc = "*"
