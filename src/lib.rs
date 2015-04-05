@@ -26,6 +26,6 @@ pub extern "C" fn point_distance(this: Box<Point>, other: Box<Point>) -> libc::c
 }
 
 #[no_mangle]
-pub extern "C" fn point_printer(pt: &Point) {
-    println!("Point {{x: {}, y: {}}}", pt.x, pt.y)
+pub extern "C" fn point_free(pt: Box<Point>) {
+	drop(pt);
 }
