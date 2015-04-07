@@ -18,11 +18,21 @@ pub extern "C" fn point_new(x: libc::c_double, y: libc::c_double) -> Box<Point> 
 }
 
 #[no_mangle]
-pub extern "C" fn point_distance(this: Box<Point>, other: Box<Point>) -> libc::c_double {
+pub extern "C" fn point_distance(this: &Point, other: &Point) -> libc::c_double {
     f64::sqrt(
         f64::powi((this.x - other.x), 2) +
         f64::powi((this.y - other.y), 2)
     )
+}
+
+#[no_mangle]
+pub extern "C" fn point_x(pt: &Point) -> libc::c_double {
+	pt.x
+}
+
+#[no_mangle]
+pub extern "C" fn point_y(pt: &Point) -> libc::c_double {
+	pt.y
 }
 
 #[no_mangle]
