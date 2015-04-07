@@ -2,7 +2,6 @@ from ctypes import Structure, CDLL, c_double, pointer, POINTER
 
 class POINT(Structure):
 	_fields_ = [("x", c_double), ("y", c_double)]
-	x = _fields_[0]
 
 rlib = CDLL("points.dll")
 
